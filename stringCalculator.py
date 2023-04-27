@@ -32,7 +32,6 @@ def add(string):
                 print(num)
                 lis.append(num)
             j += 1
-        print(lis)
         return sum(lis)
 
 
