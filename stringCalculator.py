@@ -19,19 +19,21 @@ def add(string):
     elif len(string) == 1:
         return int(string)
     else:
-        result = 0
-        num = ""
-        for i in range(0, len(string)):
-            if string[i].isdigit() and string[i-1] == "-":
-                return "negatives not allowed"
-            elif string[i].isdigit():
-                num += string[i]
-            elif string[i].isdigit() == False:
-                num = "0"
-
-            result += int(num)
-        print(result)
-        return result
+        lis = []
+        j = 0
+        while j < (len(string)):
+            if string[j].isdigit() == True:
+                pos = j
+                l = 0
+                while string[j].isdigit() == True and j < len(string):
+                    j += 1
+                    l += 1
+                num = int(string[pos:pos+l])
+                print(num)
+                lis.append(num)
+            j += 1
+        print(lis)
+        return sum(lis)
 
 
 test()
